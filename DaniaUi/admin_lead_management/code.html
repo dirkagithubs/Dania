@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#312521",
+                        "cocoa": "#443630",
+                        "copper": "#785443",
+                        "soft-gray": "#DBD9D7",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#1b1817",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-soft-gray font-display text-slate-900">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-cocoa text-white flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-white">domain</span>
+</div>
+<div>
+<h1 class="font-bold text-lg leading-none">Dania</h1>
+<p class="text-xs text-white/60">Real Estate Admin</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white text-white/70" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">apartment</span>
+<span class="text-sm font-medium">Properties</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-white rounded-lg transition-colors bg-white/10" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-medium">Inquiries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">perm_media</span>
+<span class="text-sm font-medium">Media</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3 p-2">
+<div class="w-8 h-8 rounded-full bg-copper flex items-center justify-center text-xs font-bold">JD</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">John Doe</p>
+<p class="text-xs text-white/50 truncate">Senior Admin</p>
+</div>
+<span class="material-symbols-outlined text-white/40 text-lg">logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Bar -->
+<header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full bg-background-light border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search listings, leads or inquiries..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-px bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-slate-200 bg-center bg-cover" data-alt="User profile avatar of the admin" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDr9mBn4AIbtFc16eqHBKz5oBL8hIBCUwgguLbRgIUIshgkdE9CwdUaVJ1lkKYufTJa4LYxTdX4w5-lJYc79ZguwiS77DD7ePJrcMviHlqqZH2gbCDZNL6jOyHMkidgArq-fbE131aeflj-SctCc1O-sFhEmg6xjDb6TtMlxx5his8YEizOQFC_qitEENxGXChE1aZGjhXOwRj6CiUW81TdN71SL0ojfPJuCCDh0FgrbfG1s1HJP_XhX4aMJDTMVsuu28iGy5phcJA')"></div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto p-8">
+<!-- Header Actions -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-2xl font-extrabold text-primary">Lead Management</h2>
+<p class="text-slate-500">Manage and track your potential clients and property inquiries.</p>
+</div>
+<button class="bg-copper hover:bg-copper/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">add</span>
+                        Add New Property
+                    </button>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">Total Leads</p>
+<h3 class="text-2xl font-bold text-primary">2,845</h3>
+<p class="text-emerald-600 text-xs font-bold mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-sm">trending_up</span> +8% this month</p>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">New Today</p>
+<h3 class="text-2xl font-bold text-primary">12</h3>
+<p class="text-slate-400 text-xs mt-2">4 pending contact</p>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">Conversion Rate</p>
+<h3 class="text-2xl font-bold text-primary">18.4%</h3>
+<p class="text-emerald-600 text-xs font-bold mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-sm">trending_up</span> +2.1%</p>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">Active Follow-ups</p>
+<h3 class="text-2xl font-bold text-primary">48</h3>
+<p class="text-rose-500 text-xs font-bold mt-2">8 overdue</p>
+</div>
+</div>
+<!-- Recent Listings Table -->
+<div class="flex items-center gap-4 mb-6">
+<span class="text-sm font-bold text-slate-500">Filter by:</span>
+<div class="flex bg-white rounded-lg p-1 border border-slate-200 shadow-sm">
+<button class="px-4 py-1.5 text-xs font-bold bg-primary text-white rounded-md">All Leads</button>
+<button class="px-4 py-1.5 text-xs font-bold text-slate-500 hover:bg-slate-50 rounded-md transition-colors">New</button>
+<button class="px-4 py-1.5 text-xs font-bold text-slate-500 hover:bg-slate-50 rounded-md transition-colors">In Progress</button>
+<button class="px-4 py-1.5 text-xs font-bold text-slate-500 hover:bg-slate-50 rounded-md transition-colors">Closed</button>
+</div>
+<div class="ml-auto flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg bg-white text-xs font-bold text-slate-700 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filters
+</button>
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg bg-white text-xs font-bold text-slate-700 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">download</span> Export
+</button>
+</div>
+</div><div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+<h3 class="font-bold text-lg text-primary">Recent Lead Activity</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 text-slate-500 uppercase text-[11px] font-bold tracking-wider">
+<tr>
+<th class="px-6 py-4">Client Name</th>
+<th class="px-6 py-4">Property Interest</th>
+<th class="px-6 py-4">Lead Source</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Date Received</th>
+<th class="px-6 py-4 text-right">Quick Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">SH</div>
+<p class="font-bold text-sm text-primary">Sarah Henderson</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">The Grand Estate</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-500">
+<span class="material-symbols-outlined text-sm text-green-500">chat</span> WhatsApp
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> New
+</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 27, 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Message"><span class="material-symbols-outlined text-lg">mail</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Call"><span class="material-symbols-outlined text-lg">call</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Schedule Viewing"><span class="material-symbols-outlined text-lg">calendar_today</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Edit Status"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">MJ</div>
+<p class="font-bold text-sm text-primary">Michael Johnson</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">Skyline Penthouse</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-500">
+<span class="material-symbols-outlined text-sm text-blue-500">language</span> Web Form
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Contacted
+</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 26, 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Message"><span class="material-symbols-outlined text-lg">mail</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Call"><span class="material-symbols-outlined text-lg">call</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Schedule Viewing"><span class="material-symbols-outlined text-lg">calendar_today</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Edit Status"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">ED</div>
+<p class="font-bold text-sm text-primary">Emily Davis</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">Forest Retreat Cabin</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-500">
+<span class="material-symbols-outlined text-sm text-indigo-500">phone</span> Phone
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-700">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Viewing
+</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 25, 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Message"><span class="material-symbols-outlined text-lg">mail</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Call"><span class="material-symbols-outlined text-lg">call</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Schedule Viewing"><span class="material-symbols-outlined text-lg">calendar_today</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Edit Status"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">RW</div>
+<p class="font-bold text-sm text-primary">Robert Wilson</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">Maple Ridge Home</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-xs font-medium text-slate-500">
+<span class="material-symbols-outlined text-sm text-blue-500">language</span> Web Form
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Closed
+</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Message"><span class="material-symbols-outlined text-lg">mail</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Call"><span class="material-symbols-outlined text-lg">call</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Schedule Viewing"><span class="material-symbols-outlined text-lg">calendar_today</span></button>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 transition-colors" title="Edit Status"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

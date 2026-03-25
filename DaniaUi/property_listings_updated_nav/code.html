@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#312521",
+                        "accent": "#785443",
+                        "background-light": "#DBD9D7",
+                        "background-dark": "#1b1817",
+                        "surface": "#F7F7F7"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Premium Properties in Qatar | Dania Real Estate</title>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center gap-3">
+<div class="size-8 text-accent">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tight uppercase">Dania Real Estate</h1>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="hover:text-accent transition-colors text-sm font-semibold uppercase tracking-wider" href="#">Home</a>
+<a class="text-accent transition-colors text-sm font-semibold uppercase tracking-wider" href="#">Properties</a>
+<a class="hover:text-accent transition-colors text-sm font-semibold uppercase tracking-wider" href="#">About</a>
+<a class="hover:text-accent transition-colors text-sm font-semibold uppercase tracking-wider" href="#">Services</a>
+<a class="hover:text-accent transition-colors text-sm font-semibold uppercase tracking-wider" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-accent hover:bg-accent/90 px-6 py-2 rounded text-sm font-bold uppercase transition-all">List Property</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<nav class="flex mb-4 text-sm text-slate-500 font-medium">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="mx-2">/</span>
+<span class="text-primary">Properties</span>
+</nav>
+<h2 class="text-4xl font-extrabold text-primary dark:text-slate-100">Premium Properties in Qatar</h2>
+<p class="text-slate-600 dark:text-slate-400 mt-2">Discover elite living spaces in Doha's most prestigious districts.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Sort by:</span>
+<select class="border-0 bg-white dark:bg-slate-800 rounded px-4 py-2 text-sm font-semibold shadow-sm focus:ring-2 focus:ring-accent">
+<option>Newest Listings</option>
+<option>Price: High to Low</option>
+<option>Price: Low to High</option>
+<option>Area: Largest first</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+<aside class="lg:col-span-1 space-y-6">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<h3 class="text-lg font-bold text-primary dark:text-slate-100 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">tune</span>
+                        Refine Search
+                    </h3>
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-2">Keyword</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-background-light/50 border-0 rounded focus:ring-2 focus:ring-accent text-sm" placeholder="Villa, Penthouse..." type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-2">Category</label>
+<div class="flex p-1 bg-background-light/50 rounded">
+<button class="flex-1 py-2 text-sm font-bold rounded bg-primary text-white">Buy</button>
+<button class="flex-1 py-2 text-sm font-bold rounded hover:bg-slate-200">Rent</button>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-2">Location</label>
+<select class="w-full py-3 bg-background-light/50 border-0 rounded focus:ring-2 focus:ring-accent text-sm">
+<option>All Locations</option>
+<option>The Pearl-Qatar</option>
+<option>Lusail City</option>
+<option>West Bay</option>
+<option>Msheireb Downtown</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-2">Property Type</label>
+<select class="w-full py-3 bg-background-light/50 border-0 rounded focus:ring-2 focus:ring-accent text-sm">
+<option>All Types</option>
+<option>Apartment</option>
+<option>Villa</option>
+<option>Penthouse</option>
+<option>Townhouse</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-2">Price Range (QAR)</label>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<input class="w-full py-2 bg-background-light/50 border-0 rounded text-sm" placeholder="Min" type="number"/>
+<input class="w-full py-2 bg-background-light/50 border-0 rounded text-sm" placeholder="Max" type="number"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-2">Bedrooms</label>
+<select class="w-full py-3 bg-background-light/50 border-0 rounded text-sm">
+<option>Any</option>
+<option>1+</option>
+<option>2+</option>
+<option>3+</option>
+<option>4+</option>
+<option>5+</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-2">Bathrooms</label>
+<select class="w-full py-3 bg-background-light/50 border-0 rounded text-sm">
+<option>Any</option>
+<option>1+</option>
+<option>2+</option>
+<option>3+</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-accent hover:bg-accent/90 text-white font-bold py-4 rounded transition-all mt-4 uppercase tracking-widest text-sm">Search Properties</button>
+</div>
+</div>
+</aside>
+<div class="lg:col-span-3">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Luxury modern villa with waterfront view in Qatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPvE1rx3-nl7VIFi8qQhwSu4CSNC5SYReJIkTPQrlH-FUhjBr5w312iIxHs-T7U0Dof6a-gfaijWvo-aXD1ca3UfrvYycq7wXQzwIgsGx9-PC8IwVS2uTpo3Gijb7TTFTAdB9Bq346BSAlDkos8Msh9yj2AorT4nWA5cNgD4mGi3mbOcSXNxGcyQ0_rcAA8eG8W6M503d09GG0YyPKyrkznBCHpoC1RkUCLozGIJWSbpGg674B9ClJJ6-t7nzFSG6iCNGcWzB9XV4')"></div>
+<div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">For Sale</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-accent transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-accent font-extrabold text-xl mb-1">QAR 12,500,000</p>
+<h3 class="text-lg font-bold text-primary dark:text-slate-100 mb-2">Majestic Waterfront Villa</h3>
+<div class="flex items-center text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base mr-1">location_on</span>
+                                The Pearl-Qatar
+                            </div>
+<div class="grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 pt-4 gap-2">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-xs font-bold text-slate-600">6 Beds</span>
+</div>
+<div class="flex flex-col items-center border-x border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-xs font-bold text-slate-600">7 Baths</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-xs font-bold text-slate-600">850 Sqm</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="High-end penthouse interior with floor to ceiling windows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCL0tPeA96aP9ePSoiBsapc8xxDXj84dEujTa2GZl_d9nDg3SDNJTEp9hH5-F8N5yqn-BIOVbSjL9c4BhHerSH-wDum3FfZ_p5IEeNasCmgqEA4Ahmb6ucCyYd3D_LTpAc9-JPUmT_qwnC-0B4Kn8EStTpHz1oDMyE9BNkCCT2tKbORJxiljfXpTxsNr7IEbg3dfQ-jRqoJ9rZWNf8aJ-Ix-a_Tp9GGiahnswRwQZNN09kvpvDa07kgJ2RgG97W4WlWP9iUPzuYuJc')"></div>
+<div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">For Sale</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-accent transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-accent font-extrabold text-xl mb-1">QAR 8,200,000</p>
+<h3 class="text-lg font-bold text-primary dark:text-slate-100 mb-2">Luxury Sky Penthouse</h3>
+<div class="flex items-center text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base mr-1">location_on</span>
+                                West Bay, Doha
+                            </div>
+<div class="grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 pt-4 gap-2">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-xs font-bold text-slate-600">4 Beds</span>
+</div>
+<div class="flex flex-col items-center border-x border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-xs font-bold text-slate-600">5 Baths</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-xs font-bold text-slate-600">420 Sqm</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Modern architecture villa in Lusail city" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAoLUXgO7Teht0CNEuQQJh9QkCQtDAClMp-25rhtt4QF65LexRUBygKO7B25jjkwNP2OkXeF-8CsG9jg7nNgL487nG93unSQw3z0hz1SA-ouG6GXg4x2PBoe229dXb6S_-RLbBpOlla_-6xZENbRsU4P_2Q2sz69zvsLHEAbqKAETP2_moAjnJIazdHts--nTt8U6hiLLTxFPOcvudS8eqJQQxaKnxvOm9xY8TRWgxp3vONaeXNC-wpoXcP0zykGKvHXJxW3JykfJE')"></div>
+<div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">For Sale</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-accent transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-accent font-extrabold text-xl mb-1">QAR 5,750,000</p>
+<h3 class="text-lg font-bold text-primary dark:text-slate-100 mb-2">Modern Lusail Villa</h3>
+<div class="flex items-center text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base mr-1">location_on</span>
+                                Lusail City
+                            </div>
+<div class="grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 pt-4 gap-2">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-xs font-bold text-slate-600">5 Beds</span>
+</div>
+<div class="flex flex-col items-center border-x border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-xs font-bold text-slate-600">4 Baths</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-xs font-bold text-slate-600">380 Sqm</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Contemporary apartment in Doha business district" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0zu5dn2uekbJH28e2_50UILw8dd3Eud_Q-LVsISysRLvYa11IrtS4Y0ADPjwQ8K0UGmHIj3MT1IJCzUSKASNEcS8DXlkE8XGzHdGIifbubwkeFAMFG9a5-UOWsboQfNaPMReIZwvBr_5NtXWjQaiGAXUTrQqXglI6KNBWM9fVf9_Gwp1IOgZg6m2fgCPvfqChEZrueKmjCl7TydWWsbzFoaS8OPwHre5Ulf39_XQhuDUOSwWMNzLDOu2vNy9ogzJy5xnitF_uXCk')"></div>
+<div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">For Sale</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-accent transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-accent font-extrabold text-xl mb-1">QAR 3,100,000</p>
+<h3 class="text-lg font-bold text-primary dark:text-slate-100 mb-2">Executive Marina Apartment</h3>
+<div class="flex items-center text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base mr-1">location_on</span>
+                                Marina District, Lusail
+                            </div>
+<div class="grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 pt-4 gap-2">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-xs font-bold text-slate-600">3 Beds</span>
+</div>
+<div class="flex flex-col items-center border-x border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-xs font-bold text-slate-600">3 Baths</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-xs font-bold text-slate-600">210 Sqm</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist design villa garden area" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwWI0KlldaDFgX5D0hhf46_YA2smrrANKi29_iLriiO1v30o21Ff73lZhKLolsA62E6xDCA8Kg6NZkFy51nkRWCf_7f_8pJCp7QRp_e5aLZi1y6bSwxIit9E_zw0eWgb_pvVSm2SbepVduaATTsAwMsQ04wbh5_nEmrF1BDNfLZxyd5sOwowQlp1T_L2yZ9z0euy9rpWWWMek2pAUjLofOJm5KGRfezIx6xf-k5Wp-2d-FeQVxgX0SjD3un2CXNSDY8x86OcRJWDk')"></div>
+<div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">For Sale</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-accent transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-accent font-extrabold text-xl mb-1">QAR 9,800,000</p>
+<h3 class="text-lg font-bold text-primary dark:text-slate-100 mb-2">Pearl Island Grand Villa</h3>
+<div class="flex items-center text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base mr-1">location_on</span>
+                                Costa Malaz, The Pearl
+                            </div>
+<div class="grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 pt-4 gap-2">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-xs font-bold text-slate-600">7 Beds</span>
+</div>
+<div class="flex flex-col items-center border-x border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-xs font-bold text-slate-600">8 Baths</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-xs font-bold text-slate-600">620 Sqm</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Luxury duplex with city views" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZNSpEW_4ie27jfK7TkG6Pg_koZavy63WWR_MzfG3yGOnudeffJqLW2Jn-qTIY2KzYdVzN1lLGjvt3qxX4PadSoURihHP89C-kW6PiE7aXGWGfLMFvcdApi8kV4ZH5jR8WA-Zi1XJMnNMjrdfuwwTsKbeb8dQ7kscg6ma5JtdicBr4_xYX4_XAIWa1SEg779dhK2WJvovKBgQAhB9efm9hU7tVX1MHjql0WhwBd0ZOE6-1wThJ3cUP390DhW4vv7Xs0kNK_jWm7DQ')"></div>
+<div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">For Sale</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-accent transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-accent font-extrabold text-xl mb-1">QAR 4,200,000</p>
+<h3 class="text-lg font-bold text-primary dark:text-slate-100 mb-2">Luxury West Bay Duplex</h3>
+<div class="flex items-center text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base mr-1">location_on</span>
+                                West Bay Lagoon
+                            </div>
+<div class="grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 pt-4 gap-2">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-xs font-bold text-slate-600">4 Beds</span>
+</div>
+<div class="flex flex-col items-center border-x border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-xs font-bold text-slate-600">4 Baths</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-xs font-bold text-slate-600">280 Sqm</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded border border-slate-300 dark:border-slate-600 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded bg-primary text-white font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded border border-slate-300 dark:border-slate-600 hover:bg-primary hover:text-white transition-colors font-bold">2</button>
+<button class="size-10 flex items-center justify-center rounded border border-slate-300 dark:border-slate-600 hover:bg-primary hover:text-white transition-colors font-bold">3</button>
+<span class="mx-2 text-slate-400">...</span>
+<button class="size-10 flex items-center justify-center rounded border border-slate-300 dark:border-slate-600 hover:bg-primary hover:text-white transition-colors font-bold">12</button>
+<button class="size-10 flex items-center justify-center rounded border border-slate-300 dark:border-slate-600 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-primary text-slate-300 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 text-accent">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tight uppercase">Dania Real Estate</h1>
+</div>
+<p class="text-sm leading-relaxed">Dania Real Estate is a leading luxury property consultant in Doha, Qatar, offering bespoke real estate solutions for local and international investors.</p>
+<div class="flex gap-4">
+<a class="size-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="size-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="size-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-accent transition-colors" href="#">Residential Sales</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Commercial Leasing</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Investment Portfolio</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Property Management</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Relocation Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Popular Areas</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-accent transition-colors" href="#">The Pearl-Qatar</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Lusail City</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">West Bay</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Al Waab</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Mushaireb</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Newsletter</h4>
+<p class="text-sm mb-4">Subscribe for the latest luxury listings and market insights.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-white/10 border-0 rounded py-3 px-4 text-sm focus:ring-1 focus:ring-accent text-white" placeholder="Email Address" type="email"/>
+<button class="bg-accent hover:bg-accent/90 text-white font-bold py-3 rounded uppercase tracking-widest text-xs transition-colors">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between gap-4 text-xs font-medium uppercase tracking-widest">
+<p>© 2024 Dania Real Estate. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+<a class="hover:text-white" href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

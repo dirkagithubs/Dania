@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Supabase and Secrets
+.env
+.env.local
+.env.*
+.env*.local
+credentials.json
+token.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

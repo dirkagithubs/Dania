@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#312521",
+                        "accent": "#785443",
+                        "neutral-light": "#DBD9D7",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#1b1817",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-light/30 px-6 md:px-20 py-4 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-4 text-primary dark:text-slate-100">
+<div class="size-8 text-accent">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Dania Real Estate</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9"><a class="text-sm font-medium leading-normal hover:text-accent transition-colors" href="#">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-accent transition-colors" href="#">Properties</a>
+<a class="text-sm font-medium leading-normal hover:text-accent transition-colors" href="#">About</a>
+<a class="text-sm font-medium leading-normal hover:text-accent transition-colors" href="#">Services</a>
+<a class="text-sm font-medium leading-normal text-accent font-bold" href="#">Contact</a></div>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-accent text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span>Login</span>
+</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="relative bg-primary text-white py-20 px-6 md:px-20 overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-cover bg-center" data-alt="Modern Doha skyline at dusk architecture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_K3szRc3pyupr6zf8y831jrhjOw3v2OGwU6HrOsC9nsZ9opWFUt8NG1u65JD7WqA2q1ngI5MPyn2gLQuDpXvt1GJL5p_I_HSHQgPR5c_NDaNaapdUhQvcRtZ0mWsRrTYutemlVvuh5r2RrVzr2roqfC-MXenHQsJMvoge6ZjvBlJuygHu0dyMUfVZTjwHU3R-LNu9YMuTo58uIqGoqnblw6SbhVPZ69r1JoyI0KiG6laaLbL1TWXRYzDdKBNXK6Df0yM7DQ0FQd0');"></div>
+<div class="relative z-10 max-w-4xl mx-auto text-center">
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6">Get in Touch</h1>
+<p class="text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+                            Expert real estate guidance in Doha. Our team is here to help you find your perfect property in Qatar's most prestigious locations.
+                        </p>
+</div>
+</div>
+<!-- Contact Grid -->
+<div class="max-w-[1200px] mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Contact Info Cards -->
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-neutral-light/20 shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<div class="bg-accent/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-accent">location_on</span>
+</div>
+<h3 class="font-bold text-xl">Visit Us</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400">Tornado Tower, Level 22<br/>West Bay, Doha, Qatar</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-neutral-light/20 shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<div class="bg-accent/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-accent">call</span>
+</div>
+<h3 class="font-bold text-xl">Call Support</h3>
+</div>
+<div class="space-y-2">
+<p class="text-slate-600 dark:text-slate-400 font-medium">+974 4400 1234</p>
+<p class="text-slate-600 dark:text-slate-400 font-medium">+974 5500 5678 (WhatsApp)</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-neutral-light/20 shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<div class="bg-accent/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-accent">mail</span>
+</div>
+<h3 class="font-bold text-xl">Email Us</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400">info@daniarealestate.qa</p>
+<p class="text-slate-600 dark:text-slate-400">sales@daniarealestate.qa</p>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="lg:col-span-2">
+<div class="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-xl border border-neutral-light/20 shadow-md">
+<h2 class="text-2xl font-bold mb-8">Send us a Message</h2>
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500">Full Name</label>
+<input class="w-full rounded-lg border-neutral-light/40 bg-background-light dark:bg-background-dark dark:border-slate-700 h-12 focus:ring-accent focus:border-accent" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500">Email Address</label>
+<input class="w-full rounded-lg border-neutral-light/40 bg-background-light dark:bg-background-dark dark:border-slate-700 h-12 focus:ring-accent focus:border-accent" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500">Phone Number</label>
+<input class="w-full rounded-lg border-neutral-light/40 bg-background-light dark:bg-background-dark dark:border-slate-700 h-12 focus:ring-accent focus:border-accent" placeholder="+974 XXXX XXXX" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500">Subject</label>
+<input class="w-full rounded-lg border-neutral-light/40 bg-background-light dark:bg-background-dark dark:border-slate-700 h-12 focus:ring-accent focus:border-accent" placeholder="Inquiry about Property" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-slate-500">Message</label>
+<textarea class="w-full rounded-lg border-neutral-light/40 bg-background-light dark:bg-background-dark dark:border-slate-700 focus:ring-accent focus:border-accent p-4" placeholder="Tell us how we can help you..." rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-accent hover:bg-accent/90 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2" type="submit">
+<span>Submit Request</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<div class="w-full h-[500px] relative bg-neutral-light/20 mt-12 overflow-hidden">
+<div class="absolute inset-0 grayscale contrast-125 brightness-75 bg-cover bg-center" data-alt="Satellite map view of Doha West Bay area" data-location="Doha" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxwpSQlJHja7w6wMUezlxeal6J_itSz9NHCL7oSy3UmnMl3i6t8WPWBApxKRFljiMRruhUsoc20VJ34jo_DZ-GjM09yoWhrdmzTFsDYPuuXrAtBHHa-Wj7p-JspM5JPolTAnyuPhUF1UVu5BFPxH0xkjt9T_idu-X5dPCBK0FEFUiZyVuWloZamQX5x9OmpO7BUPTBScK8-ahj9eHEl3eM5Gl4k1LxwOb2Chx2zAXFf8EM9vzvMjIknPPaNNdbb3FHiw4jA8UlmFw');"></div>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<!-- Map Pin Overlay -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-primary text-white p-4 rounded-xl shadow-2xl mb-2 flex items-center gap-3 whitespace-nowrap border-2 border-accent">
+<div class="bg-accent p-1 rounded-full">
+<span class="material-symbols-outlined text-sm">location_city</span>
+</div>
+<span class="font-bold">Dania Real Estate HQ - Tornado Tower</span>
+</div>
+<span class="material-symbols-outlined text-accent text-5xl drop-shadow-lg">location_on</span>
+</div>
+<!-- Map Legend -->
+<div class="absolute bottom-6 left-6 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-lg max-w-[200px] border border-neutral-light/20">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Location</p>
+<p class="text-sm font-medium">West Bay, Doha Business District</p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8 px-6 md:px-20 border-t border-accent/20">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-6 text-accent">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold">Dania Real Estate</h2>
+</div>
+<p class="text-neutral-light/70 text-sm leading-relaxed">
+                            Premier property solutions in Qatar. Specializing in luxury residential and commercial real estate across Doha's most iconic neighborhoods.
+                        </p>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-accent">Quick Links</h4>
+<ul class="space-y-3 text-sm text-neutral-light/70">
+<li><a class="hover:text-white transition-colors" href="#">Residential Sales</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Commercial Leasing</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Property Management</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Investment Consulting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-accent">Areas</h4>
+<ul class="space-y-3 text-sm text-neutral-light/70">
+<li><a class="hover:text-white transition-colors" href="#">The Pearl-Qatar</a></li>
+<li><a class="hover:text-white transition-colors" href="#">West Bay</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Lusail City</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Msheireb Downtown</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-accent">Follow Us</h4>
+<div class="flex gap-4">
+<a class="size-10 rounded-full border border-neutral-light/30 flex items-center justify-center hover:bg-accent hover:border-accent transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="size-10 rounded-full border border-neutral-light/30 flex items-center justify-center hover:bg-accent hover:border-accent transition-all" href="#">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+</a>
+<a class="size-10 rounded-full border border-neutral-light/30 flex items-center justify-center hover:bg-accent hover:border-accent transition-all" href="#">
+<span class="material-symbols-outlined text-lg">movie</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-neutral-light/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-light/40">
+<p>© 2024 Dania Real Estate. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

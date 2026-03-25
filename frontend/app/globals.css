@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-display bg-background-light text-slate-900;
+  }
+  .dark body {
+    @apply bg-background-dark text-slate-100;
+  }
+}
+
+/* Material Symbols configuration since the source HTML uses it */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
