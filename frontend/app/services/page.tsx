@@ -82,7 +82,7 @@ export default function ServicesPage() {
       {/* Why Choose Us Section */}
       <section className="bg-primary dark:bg-slate-900 py-24 text-white lg:py-32 relative overflow-hidden">
         {/* Decorative Background Elements */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-copper-accent/5 rounded-full blur-3xl rounded-full"></div>
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-copper-accent/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] bg-copper-accent/5 blur-3xl rounded-full"></div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
@@ -95,7 +95,7 @@ export default function ServicesPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
               {/* Overlay Badge */}
               <div className="absolute bottom-8 left-8 bg-copper-accent text-white px-6 py-4 rounded-xl shadow-xl backdrop-blur-md">
-                <div className="text-3xl font-black mb-1">15+</div>
+                <div className="text-3xl font-black mb-1">12+</div>
                 <div className="text-sm font-bold uppercase tracking-wider">Years Experience</div>
               </div>
             </div>

@@ -135,9 +135,10 @@ export default function AdminProperties() {
       
       const data = await res.json();
       return data.url;
-    } catch (err: any) {
-      console.error("Upload error:", err.message);
-      showSuccess(`❌ Upload Error: ${err.message}`);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Upload failed";
+      console.error("Upload error:", msg);
+      showSuccess(`❌ Upload Error: ${msg}`);
       return null;
     } finally {
       setUploadingImage(false);

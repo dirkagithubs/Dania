@@ -23,6 +23,23 @@ module.exports = {
         "xl": "0.75rem",
         "full": "9999px"
       },
+      keyframes: {
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(1rem)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in-down': {
+          '0%': { opacity: '0', transform: 'translateY(-1rem)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in-right': {
+          '0%': { opacity: '0', transform: 'translateX(-1rem)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'bounce-slow': 'bounce 3s ease-in-out infinite',
+      },
     },
   },
   plugins: [

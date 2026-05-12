@@ -3,13 +3,25 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
+type FeaturedProperty = {
+  id: string;
+  title: string;
+  price: number;
+  location: string;
+  beds: number;
+  baths: number;
+  area: number;
+  status: string;
+  main_image: string;
+};
+
 export default function Home() {
   const router = useRouter();
   const [location, setLocation] = useState("All Locations");
   const [beds, setBeds] = useState("Any");
-  const [category, setCategory] = useState("All");
-  
-  const [featuredProperties, setFeaturedProperties] = useState<any[]>([]);
+  const [category, setCategory] = useState<"All" | "For Sale" | "For Rent">("All");
+
+  const [featuredProperties, setFeaturedProperties] = useState<FeaturedProperty[]>([]);
   const [loadingFeatured, setLoadingFeatured] = useState(true);
 
   useEffect(() => {
@@ -33,10 +45,8 @@ export default function Home() {
   const handleSearch = () => {
     const params = new URLSearchParams();
     if (location && location !== "All Locations") params.set("location", location);
-    if (category === "Rent") params.set("category", "For Rent");
-    if (category === "Sale") params.set("category", "For Sale");
-    if (beds && beds !== "Any" && beds !== "Bedrooms") params.set("beds", beds);
-    
+    if (category !== "All") params.set("category", category);
+    if (beds && beds !== "Any") params.set("beds", beds);
     router.push(`/properties?${params.toString()}`);
   };
 
@@ -61,15 +71,32 @@ export default function Home() {
               Experience the pinnacle of luxury living in Doha, Qatar
             </p>
           </div>
-          
-          {/* Search Bar matching the screenshot */}
-          <div className="w-full mt-4 bg-white/95 backdrop-blur-sm p-2 rounded-xl flex flex-col md:flex-row items-center gap-2 shadow-xl border border-white/20">
-            <div className="flex-1 grid grid-cols-2 md:grid-cols-4 w-full divide-y md:divide-y-0 md:divide-x divide-slate-200">
-              
+
+          {/* Buy / Rent Tab Switcher */}
+          <div className="flex items-center bg-black/30 backdrop-blur-md rounded-full p-1 gap-1 self-center">
+            {(["All", "For Sale", "For Rent"] as const).map((opt) => (
+              <button
+                key={opt}
+                onClick={() => setCategory(opt)}
+                className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${
+                  category === opt
+                    ? "bg-white text-primary shadow-md"
+                    : "text-white/80 hover:text-white"
+                }`}
+              >
+                {opt === "All" ? "All" : opt === "For Sale" ? "Buy" : "Rent"}
+              </button>
+            ))}
+          </div>
+
+          {/* Search Bar */}
+          <div className="w-full bg-white/95 backdrop-blur-sm p-2 rounded-xl flex flex-col md:flex-row items-center gap-2 shadow-xl border border-white/20">
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full divide-y sm:divide-y md:divide-y-0 md:divide-x divide-slate-200">
+
               {/* Location */}
               <div className="flex items-center gap-2 px-4 py-2">
                 <span className="material-symbols-outlined text-copper-accent text-xl">location_on</span>
-                <select 
+                <select
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   className="w-full bg-transparent border-none text-sm font-bold text-slate-700 outline-none p-0 appearance-none cursor-pointer"
@@ -82,20 +109,11 @@ export default function Home() {
                 </select>
                 <span className="material-symbols-outlined text-slate-400 text-base pointer-events-none">expand_more</span>
               </div>
-              
-              {/* Price Range */}
-              <div className="flex items-center gap-2 px-4 py-2 opacity-50 cursor-not-allowed">
-                <span className="material-symbols-outlined text-copper-accent text-xl">payments</span>
-                <select disabled className="w-full bg-transparent border-none text-sm font-bold text-slate-700 outline-none p-0 appearance-none cursor-not-allowed">
-                  <option>Price Range</option>
-                </select>
-                <span className="material-symbols-outlined text-slate-400 text-base pointer-events-none">expand_more</span>
-              </div>
-              
+
               {/* Bedrooms */}
               <div className="flex items-center gap-2 px-4 py-2">
                 <span className="material-symbols-outlined text-copper-accent text-xl">bed</span>
-                <select 
+                <select
                   value={beds}
                   onChange={(e) => setBeds(e.target.value)}
                   className="w-full bg-transparent border-none text-sm font-bold text-slate-700 outline-none p-0 appearance-none cursor-pointer"
@@ -109,27 +127,21 @@ export default function Home() {
                 </select>
                 <span className="material-symbols-outlined text-slate-400 text-base pointer-events-none">expand_more</span>
               </div>
-              
-              {/* Rent/Sale */}
-              <div className="flex items-center gap-2 px-4 py-2">
-                <span className="material-symbols-outlined text-copper-accent text-xl">home</span>
-                <select 
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-transparent border-none text-sm font-bold text-slate-700 outline-none p-0 appearance-none cursor-pointer"
-                >
-                  <option>All</option>
-                  <option>Rent</option>
-                  <option>Sale</option>
+
+              {/* Price Range */}
+              <div className="flex items-center gap-2 px-4 py-2 opacity-50 cursor-not-allowed">
+                <span className="material-symbols-outlined text-copper-accent text-xl">payments</span>
+                <select disabled className="w-full bg-transparent border-none text-sm font-bold text-slate-700 outline-none p-0 appearance-none cursor-not-allowed">
+                  <option>Price Range</option>
                 </select>
                 <span className="material-symbols-outlined text-slate-400 text-base pointer-events-none">expand_more</span>
               </div>
             </div>
-            
+
             {/* Search Button */}
-            <button 
+            <button
               onClick={handleSearch}
-              className="w-full md:w-auto bg-[#362C28] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-[#251E1A] transition-colors flex items-center justify-center gap-2 shrink-0"
+              className="w-full md:w-auto bg-[#362C28] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#251E1A] transition-colors flex items-center justify-center gap-2 shrink-0 mt-1 md:mt-0"
             >
               <span className="material-symbols-outlined text-[18px]">search</span>
               Search

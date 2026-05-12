@@ -15,6 +15,7 @@ function PropertiesContent() {
 
   const [allProperties, setAllProperties] = useState<DbProperty[]>([]);
   const [loading, setLoading] = useState(true);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState<"All" | "For Sale" | "For Rent">(initialCategory);
   const [location, setLocation] = useState(initialLocation);
@@ -100,18 +101,28 @@ function PropertiesContent() {
             <p className="text-slate-600 dark:text-slate-400 mt-2">Discover elite living spaces in Doha&apos;s most prestigious districts.</p>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-semibold text-slate-500 uppercase tracking-widest">Sort by:</span>
-            <select 
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-              className="border-0 bg-white dark:bg-slate-800 rounded-lg px-4 py-2 text-sm font-semibold shadow-sm focus:ring-2 focus:ring-copper-accent outline-none cursor-pointer"
+          <div className="flex items-center gap-2 flex-wrap">
+            <button
+              onClick={() => setFiltersOpen(!filtersOpen)}
+              className="lg:hidden flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 text-sm font-semibold shadow-sm text-slate-700 dark:text-slate-200 hover:border-copper-accent transition-colors"
             >
-              <option>Newest Listings</option>
-              <option>Price: High to Low</option>
-              <option>Price: Low to High</option>
-              <option>Area: Largest first</option>
-            </select>
+              <span className="material-symbols-outlined text-copper-accent text-base leading-none">tune</span>
+              Filters
+              <span className="material-symbols-outlined text-slate-400 text-base leading-none">{filtersOpen ? "expand_less" : "expand_more"}</span>
+            </button>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-semibold text-slate-500 uppercase tracking-widest hidden sm:block whitespace-nowrap">Sort by:</span>
+              <select
+                value={sort}
+                onChange={(e) => setSort(e.target.value)}
+                className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg pl-4 pr-10 py-2.5 text-sm font-semibold shadow-sm focus:ring-2 focus:ring-copper-accent focus:border-copper-accent outline-none cursor-pointer text-slate-700 dark:text-slate-200 hover:border-copper-accent transition-colors"
+              >
+                <option>Newest Listings</option>
+                <option>Price: High to Low</option>
+                <option>Price: Low to High</option>
+                <option>Area: Largest first</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -119,14 +130,14 @@ function PropertiesContent() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           
           {/* Sidebar Filter */}
-          <aside className="lg:col-span-1 space-y-6">
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 sticky top-24">
+          <aside className={`lg:col-span-1 space-y-6 ${filtersOpen ? "block" : "hidden"} lg:block`}>
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 lg:sticky lg:top-24">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-bold text-primary dark:text-slate-100 flex items-center gap-2">
                   <span className="material-symbols-outlined text-copper-accent">tune</span>
                   Filters
                 </h3>
-                <button 
+                <button
                   onClick={() => {
                     setKeyword(""); setCategory("All"); setLocation("All Locations"); setPropertyType("All Types"); setBeds("Any"); setBaths("Any");
                   }}
@@ -239,14 +250,14 @@ function PropertiesContent() {
                 <span className="ml-3 text-slate-500 font-bold">Loading properties...</span>
               </div>
             ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
               {filteredProperties.length > 0 ? filteredProperties.map((property, idx) => (
                 <Link href={`/properties/${property.id}`} key={property.id} className="block group">
                   <div 
                     className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-1 h-full flex flex-col"
                     style={{ animationDelay: `${(idx % 6) * 100}ms` }}
                   >
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-48 sm:h-56 md:h-52 xl:h-56 overflow-hidden">
                       <div 
                         className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" 
                         style={{ backgroundImage: `url('${property.main_image || property.mainImage || ""}')` }}
@@ -262,27 +273,27 @@ function PropertiesContent() {
                       </button>
                     </div>
 
-                    <div className="p-6 flex-1 flex flex-col">
-                      <p className="text-copper-accent font-extrabold text-xl mb-1">QAR {property.price.toLocaleString()}</p>
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 line-clamp-1 group-hover:text-copper-accent transition-colors">{property.title}</h3>
-                      
-                      <div className="flex items-center text-slate-500 text-sm mb-4">
-                        <span className="material-symbols-outlined text-base mr-1">location_on</span>
+                    <div className="p-4 sm:p-6 flex-1 flex flex-col">
+                      <p className="text-copper-accent font-extrabold text-base sm:text-xl mb-1">QAR {property.price.toLocaleString()}</p>
+                      <h3 className="text-sm sm:text-lg font-bold text-slate-900 dark:text-slate-100 mb-1.5 line-clamp-1 group-hover:text-copper-accent transition-colors">{property.title}</h3>
+
+                      <div className="flex items-center text-slate-500 text-xs sm:text-sm mb-3 sm:mb-4">
+                        <span className="material-symbols-outlined text-sm sm:text-base mr-1">location_on</span>
                         <span className="line-clamp-1">{property.location}</span>
                       </div>
-                      
-                      <div className="mt-auto pt-4 grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 gap-2">
+
+                      <div className="mt-auto pt-3 sm:pt-4 grid grid-cols-3 border-t border-slate-100 dark:border-slate-700 gap-1 sm:gap-2">
                         <div className="flex flex-col items-center group/icon hover:text-copper-accent transition-colors">
-                          <span className="material-symbols-outlined text-slate-400 group-hover/icon:text-copper-accent transition-colors">bed</span>
-                          <span className="text-xs font-bold text-slate-600 dark:text-slate-400 mt-1">{property.beds} Beds</span>
+                          <span className="material-symbols-outlined text-slate-400 group-hover/icon:text-copper-accent transition-colors text-base sm:text-2xl">bed</span>
+                          <span className="text-[10px] sm:text-xs font-bold text-slate-600 dark:text-slate-400 mt-0.5 sm:mt-1">{property.beds} Beds</span>
                         </div>
                         <div className="flex flex-col items-center border-x border-slate-100 dark:border-slate-700 group/icon hover:text-copper-accent transition-colors">
-                          <span className="material-symbols-outlined text-slate-400 group-hover/icon:text-copper-accent transition-colors">bathtub</span>
-                          <span className="text-xs font-bold text-slate-600 dark:text-slate-400 mt-1">{property.baths} Baths</span>
+                          <span className="material-symbols-outlined text-slate-400 group-hover/icon:text-copper-accent transition-colors text-base sm:text-2xl">bathtub</span>
+                          <span className="text-[10px] sm:text-xs font-bold text-slate-600 dark:text-slate-400 mt-0.5 sm:mt-1">{property.baths} Baths</span>
                         </div>
                         <div className="flex flex-col items-center group/icon hover:text-copper-accent transition-colors">
-                          <span className="material-symbols-outlined text-slate-400 group-hover/icon:text-copper-accent transition-colors">square_foot</span>
-                          <span className="text-xs font-bold text-slate-600 dark:text-slate-400 mt-1">{property.area} Sqm</span>
+                          <span className="material-symbols-outlined text-slate-400 group-hover/icon:text-copper-accent transition-colors text-base sm:text-2xl">square_foot</span>
+                          <span className="text-[10px] sm:text-xs font-bold text-slate-600 dark:text-slate-400 mt-0.5 sm:mt-1">{property.area} Sqm</span>
                         </div>
                       </div>
                     </div>

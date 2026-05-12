@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -10,7 +11,7 @@ export default function Navigation() {
     <header className="bg-header-cocoa text-white px-6 md:px-12 lg:px-24 py-4 flex items-center justify-between sticky top-0 z-50 shadow-md">
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
-          <img src="/images/logo.png" alt="Dania Real Estate Logo" className="h-10 w-auto object-contain" />
+          <Image src="/images/logo.png" alt="Dania Real Estate Logo" width={200} height={56} className="h-14 w-auto object-contain" />
         </Link>
       </div>
       

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="space-y-6">
           <div className="flex items-center gap-3 text-white mb-2">
-            <img src="/images/logo.png" alt="Dania Real Estate Logo" className="h-12 w-auto object-contain brightness-0 invert" />
+            <Image src="/images/logo.png" alt="Dania Real Estate Logo" width={160} height={48} className="h-12 w-auto object-contain" />
           </div>
           <p className="text-sm leading-relaxed">
             Dedicated to providing premier real estate solutions in the State of Qatar. Our legacy is built on trust, transparency, and unparalleled market expertise.
@@ -33,7 +34,7 @@ export default function Footer() {
               <Link className="hover:text-copper-accent transition-colors" href="/services">Property Management</Link>
             </li>
             <li>
-              <Link className="hover:text-copper-accent transition-colors" href="/about">Investment Advisory</Link>
+              <Link className="hover:text-copper-accent transition-colors" href="/services">Investment Advisory</Link>
             </li>
           </ul>
         </div>

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -33,7 +32,7 @@ export default function AdminLogin() {
       } else {
         setError(data.message || "Invalid credentials");
       }
-    } catch (err) {
+    } catch {
       setError("An error occurred during login.");
     } finally {
       setLoading(false);

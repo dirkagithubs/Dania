@@ -160,6 +160,7 @@ export default function PropertyDetails({ params }: { params: { id: string } }) 
               <span className="material-symbols-outlined text-4xl">close</span>
             </button>
             <div className="relative max-w-5xl max-h-[85vh] w-full mx-4" onClick={(e) => e.stopPropagation()}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={allImages[activeImage]} alt="" className="w-full h-full object-contain rounded-lg" />
               {allImages.length > 1 && (
                 <>

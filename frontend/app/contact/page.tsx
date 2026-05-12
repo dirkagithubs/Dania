@@ -1,6 +1,9 @@
 "use client";
+import { useState } from "react";
 
 export default function ContactUs() {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <main className="flex-1 w-full bg-white dark:bg-background-dark">
       {/* Hero Section */}
@@ -58,24 +61,40 @@ export default function ContactUs() {
         <div className="lg:col-span-2">
           <div className="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-xl border border-slate-100 dark:border-slate-700 shadow-md">
             <h2 className="text-2xl font-bold mb-8 text-slate-900 dark:text-white">Send us a Message</h2>
-            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Form submission simulated (UI-First Phase)"); }}>
+
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
+                <div className="size-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+                  <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-4xl">check_circle</span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Message Sent!</h3>
+                <p className="text-slate-500 dark:text-slate-400 max-w-sm">Thank you for reaching out. Our team will get back to you within 15 minutes.</p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="mt-2 text-copper-accent font-bold hover:underline text-sm"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold uppercase tracking-wider text-slate-500">Full Name</label>
-                  <input 
-                    required 
-                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none" 
-                    placeholder="John Doe" 
-                    type="text" 
+                  <input
+                    required
+                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none"
+                    placeholder="John Doe"
+                    type="text"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold uppercase tracking-wider text-slate-500">Email Address</label>
-                  <input 
-                    required 
-                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none" 
-                    placeholder="john@example.com" 
-                    type="email" 
+                  <input
+                    required
+                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none"
+                    placeholder="john@example.com"
+                    type="email"
                   />
                 </div>
               </div>
@@ -83,34 +102,34 @@ export default function ContactUs() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold uppercase tracking-wider text-slate-500">Phone Number</label>
-                  <input 
-                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none" 
-                    placeholder="+974 XXXX XXXX" 
-                    type="tel" 
+                  <input
+                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none"
+                    placeholder="+974 XXXX XXXX"
+                    type="tel"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold uppercase tracking-wider text-slate-500">Subject</label>
-                  <input 
+                  <input
                     required
-                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none" 
-                    placeholder="Inquiry about Property" 
-                    type="text" 
+                    className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 h-12 px-4 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none"
+                    placeholder="Inquiry about Property"
+                    type="text"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold uppercase tracking-wider text-slate-500">Message</label>
-                <textarea 
+                <textarea
                   required
-                  className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none p-4 resize-y" 
-                  placeholder="Tell us how we can help you..." 
+                  className="w-full rounded-lg border-slate-200 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 focus:ring-2 focus:ring-copper-accent focus:border-transparent transition-all outline-none p-4 resize-y"
+                  placeholder="Tell us how we can help you..."
                   rows={5}
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 type="submit"
                 className="w-full md:w-auto px-10 py-4 bg-copper-accent hover:bg-copper-accent/90 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2"
               >
@@ -118,6 +137,7 @@ export default function ContactUs() {
                 <span className="material-symbols-outlined text-sm">send</span>
               </button>
             </form>
+            )}
           </div>
         </div>
       </section>
