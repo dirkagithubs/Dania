@@ -9,7 +9,7 @@ type DbProperty = any;
 
 function PropertiesContent() {
   const searchParams = useSearchParams();
-  const initialCategory = (searchParams.get("category") as "All" | "For Sale" | "For Rent") || "All";
+  const initialCategory = (searchParams.get("category") as "All" | "For Rent") || "All"; // For Sale removed; site is rent-only
   const initialLocation = searchParams.get("location") || "All Locations";
   const initialBeds = searchParams.get("beds") || "Any";
 
@@ -17,7 +17,7 @@ function PropertiesContent() {
   const [loading, setLoading] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [keyword, setKeyword] = useState("");
-  const [category, setCategory] = useState<"All" | "For Sale" | "For Rent">(initialCategory);
+  const [category, setCategory] = useState<"All" | "For Rent">(initialCategory);
   const [location, setLocation] = useState(initialLocation);
   const [propertyType, setPropertyType] = useState("All Types");
   const [beds, setBeds] = useState(initialBeds);
@@ -165,15 +165,11 @@ function PropertiesContent() {
                 <div>
                   <label className="block text-xs font-bold uppercase text-slate-500 mb-2">Category</label>
                   <div className="flex p-1 bg-slate-50 dark:bg-slate-900 rounded-lg shadow-inner">
-                    <button 
-                      onClick={() => setCategory("For Sale")}
-                      className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${category === "For Sale" ? "bg-copper-accent text-white shadow-sm" : "text-slate-500 hover:text-slate-900 dark:hover:text-white"}`}
-                    >Buy</button>
-                    <button 
+                    <button
                       onClick={() => setCategory("For Rent")}
                       className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${category === "For Rent" ? "bg-copper-accent text-white shadow-sm" : "text-slate-500 hover:text-slate-900 dark:hover:text-white"}`}
                     >Rent</button>
-                    <button 
+                    <button
                       onClick={() => setCategory("All")}
                       className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${category === "All" ? "bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm" : "text-slate-500 hover:text-slate-900 dark:hover:text-white"}`}
                     >All</button>

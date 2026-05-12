@@ -10,7 +10,7 @@ type PropertyRow = {
   beds: number;
   baths: number;
   area: number;
-  status: "For Sale" | "For Rent";
+  status: "For Rent";
   type: "Villa" | "Penthouse" | "Apartment" | "Townhouse" | "Duplex";
   description: string;
   main_image: string;
@@ -27,7 +27,7 @@ type PropertyFormData = {
   beds: string;
   baths: string;
   area: string;
-  status: "For Sale" | "For Rent";
+  status: "For Rent";
   type: "Villa" | "Penthouse" | "Apartment" | "Townhouse" | "Duplex";
   description: string;
   main_image: string;
@@ -43,7 +43,7 @@ const emptyForm: PropertyFormData = {
   beds: "",
   baths: "",
   area: "",
-  status: "For Sale",
+  status: "For Rent",
   type: "Villa",
   description: "",
   main_image: "",
@@ -308,7 +308,7 @@ export default function AdminProperties() {
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Status *</label>
                   <select value={form.status} onChange={(e) => updateField("status", e.target.value)}
                     className="w-full rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 h-12 px-3 focus:ring-2 focus:ring-copper-accent outline-none text-sm font-medium cursor-pointer">
-                    <option>For Sale</option><option>For Rent</option>
+                    <option>For Rent</option>
                   </select>
                 </div>
                 <div>
@@ -522,12 +522,8 @@ export default function AdminProperties() {
           <p className="text-2xl font-black text-primary dark:text-white">{properties.length}</p>
         </div>
         <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-100 dark:border-slate-700 shadow-sm">
-          <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">For Sale</p>
-          <p className="text-2xl font-black text-primary dark:text-white">{properties.filter(p => p.status === "For Sale").length}</p>
-        </div>
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-100 dark:border-slate-700 shadow-sm">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">For Rent</p>
-          <p className="text-2xl font-black text-primary dark:text-white">{properties.filter(p => p.status === "For Rent").length}</p>
+          <p className="text-2xl font-black text-primary dark:text-white">{properties.length}</p>
         </div>
         <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-100 dark:border-slate-700 shadow-sm">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Avg. Price</p>
@@ -541,7 +537,7 @@ export default function AdminProperties() {
       <div className="flex items-center gap-3 mb-6">
         <span className="text-sm font-bold text-slate-500 shrink-0">Filter:</span>
         <div className="flex bg-white dark:bg-slate-800 rounded-lg p-1 border border-slate-200 dark:border-slate-700 shadow-sm">
-          {["All", "For Sale", "For Rent"].map(f => (
+          {["All", "For Rent"].map(f => (
             <button key={f} onClick={() => setFilter(f)}
               className={`px-4 py-1.5 text-xs font-bold rounded-md transition-colors whitespace-nowrap ${filter === f ? "bg-slate-900 dark:bg-slate-700 text-white" : "text-slate-500 hover:text-slate-900 dark:hover:text-white"}`}
             >{f}</button>
@@ -597,10 +593,8 @@ export default function AdminProperties() {
                     </td>
                     <td className="px-6 py-4 text-sm font-medium text-slate-600 dark:text-slate-400">{property.area} sqm</td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold shadow-sm border border-black/5 ${
-                        property.status === "For Sale" ? "bg-blue-100 text-blue-700" : "bg-emerald-100 text-emerald-700"
-                      }`}>
-                        <span className={`w-1.5 h-1.5 rounded-full ${property.status === "For Sale" ? "bg-blue-500" : "bg-emerald-500"}`}></span>
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold shadow-sm border border-black/5 bg-emerald-100 text-emerald-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                         {property.status}
                       </span>
                     </td>

@@ -19,7 +19,7 @@ export default function Home() {
   const router = useRouter();
   const [location, setLocation] = useState("All Locations");
   const [beds, setBeds] = useState("Any");
-  const [category, setCategory] = useState<"All" | "For Sale" | "For Rent">("All");
+  const category = "For Rent"; // site is rent-only
 
   const [featuredProperties, setFeaturedProperties] = useState<FeaturedProperty[]>([]);
   const [loadingFeatured, setLoadingFeatured] = useState(true);
@@ -45,7 +45,7 @@ export default function Home() {
   const handleSearch = () => {
     const params = new URLSearchParams();
     if (location && location !== "All Locations") params.set("location", location);
-    if (category !== "All") params.set("category", category);
+    params.set("category", category);
     if (beds && beds !== "Any") params.set("beds", beds);
     router.push(`/properties?${params.toString()}`);
   };
@@ -70,23 +70,6 @@ export default function Home() {
             <p className="text-white/90 text-sm md:text-base font-light tracking-wide pt-2">
               Experience the pinnacle of luxury living in Doha, Qatar
             </p>
-          </div>
-
-          {/* Buy / Rent Tab Switcher */}
-          <div className="flex items-center bg-black/30 backdrop-blur-md rounded-full p-1 gap-1 self-center">
-            {(["All", "For Sale", "For Rent"] as const).map((opt) => (
-              <button
-                key={opt}
-                onClick={() => setCategory(opt)}
-                className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${
-                  category === opt
-                    ? "bg-white text-primary shadow-md"
-                    : "text-white/80 hover:text-white"
-                }`}
-              >
-                {opt === "All" ? "All" : opt === "For Sale" ? "Buy" : "Rent"}
-              </button>
-            ))}
           </div>
 
           {/* Search Bar */}
@@ -178,7 +161,7 @@ export default function Home() {
                       <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 bg-slate-200 dark:bg-slate-700" 
                            style={{ backgroundImage: `url('${prop.main_image}')` }}>
                       </div>
-                      <div className={`absolute top-4 left-4 text-white text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded uppercase shadow-sm ${prop.status === "For Sale" ? "bg-blue-600" : "bg-emerald-600"}`}>
+                      <div className="absolute top-4 left-4 text-white text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded uppercase shadow-sm bg-emerald-600">
                         {prop.status}
                       </div>
                     </div>
